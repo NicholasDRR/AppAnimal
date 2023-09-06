@@ -11,8 +11,6 @@ function manipulateForm(){
 
     animal_form.onsubmit = async (event) => {
 
-        //event.preventDefault()
-
         const animal_name = input_name.value
         const animal_age = input_age.value
 
@@ -24,7 +22,7 @@ function manipulateForm(){
         
         const animal_color = input_color.value
 
-        await axios.post('http://127.0.0.1:8000/animal', {
+        await axios.post('http://127.0.0.1:8000/animal/register', {
             name: animal_name,
             age: animal_age,
             gender: animal_gender,
@@ -40,8 +38,6 @@ async function loadAnimals(){
     const response = await axios.get('http://127.0.0.1:8000/animal')
     const animals = response.data
     const animals_list = document.getElementById('animals-list')
-
-    //animals_list.innerHTML = ''
 
     animals.forEach(animal => {
 
@@ -69,9 +65,11 @@ async function searchAnimal(){
 
     search_form.onsubmit = (event) => {
 
-        animals_searched.innerHTML = '' // Limpando listagem
+        animals_searched.innerHTML = '' 
 
         animals.forEach(animal => {
+
+            console.log(animal.name)
 
             event.preventDefault()
 
@@ -100,7 +98,7 @@ function deleteAnimal(){
     delete_form.onsubmit = async (event) => {
 
         const id = input_id.value
-        await axios.delete(`http://127.0.0.1:8000/animal?id=${id}`)
+        await axios.delete(`http://127.0.0.1:8000/animal/delete?id=${id}`)
 
     }
 
@@ -132,7 +130,7 @@ function updateAnimal(){
         
         const update_animal_color = input_update_color.value
 
-        await axios.put(`http://127.0.0.1:8000/animal/${update_id}`, {
+        await axios.put(`http://127.0.0.1:8000/animal/update/?id=${update_id}`, {
             name: update_animal_name,
             age: update_animal_age,
             gender: update_animal_gender,

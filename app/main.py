@@ -1,9 +1,7 @@
 from app.routes import animal
 
-from uuid import uuid4
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Optional, List
 
 
 app = FastAPI()
@@ -23,6 +21,3 @@ app.add_middleware(
 )
 
 app.include_router(animal.router)
-
-    
-    
