@@ -1,32 +1,44 @@
-function manipulateForm(){
-
+function createAnimal(){
+    
     const animal_form = document.getElementById('animals-form')
-    const input_name = document.getElementById('name')
-    const input_age = document.getElementById('age')
-
-    var input_gender = document.getElementsByName('gender')
-
-    const input_color = document.getElementById('color')
+    const input_name = document.getElementById('pets-name')
+    const input_breed = document.getElementById('pets-breed')
+    const input_birthday= document.getElementById('pets-birthday')
+    var input_gender = document.getElementsByName('pet-gender')
+    var input_neutering = document.getElementsByName('spayed-neutered')
+    var input_weight = document.getElementsByName('pet-weight')
 
 
     animal_form.onsubmit = async (event) => {
 
+        event.preventDefault();
+
         const animal_name = input_name.value
-        const animal_age = input_age.value
+        const animal_breed = input_breed.value
+        const animal_birthday = input_birthday.value
 
         for (var i = 0; i < input_gender.length; i++) {
             if (input_gender[i].checked) {
                 var animal_gender = input_gender[i].value
             }}
 
-        
-        const animal_color = input_color.value
+        for (var i = 0; i < input_neutering.length; i++) {
+            if (input_neutering[i].checked) {
+                var animal_neutering = input_neutering[i].value
+            }}
 
+        for (var i = 0; i < input_weight.length; i++) {
+            if (input_weight[i].checked) {
+                var animal_weight = input_weight[i].value
+            }}
+   
         await axios.post('http://127.0.0.1:8000/animal/register', {
             name: animal_name,
-            age: animal_age,
+            birthday: animal_birthday,
+            breed: animal_breed,
             gender: animal_gender,
-            color: animal_color,
+            neutering: animal_neutering,
+            weight: animal_weight
         })
 
     }
@@ -43,7 +55,7 @@ async function loadAnimals(){
 
         const item = document.createElement('li')
 
-        const row = `${animal._id} - ${animal.name} - ${animal.age} - ${animal.gender} - ${animal.color}`
+        const row = `${animal.name}`
 
         item.innerText = row
     
@@ -142,17 +154,13 @@ function updateAnimal(){
 }
 
 
-
 function app(){
-    manipulateForm()
     loadAnimals()
+    createAnimal()
     searchAnimal()
     deleteAnimal()
     updateAnimal()
 }
 
+
 app()
-
-
-
-
