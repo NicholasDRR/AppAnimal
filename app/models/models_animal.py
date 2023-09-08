@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
-from datetime import date
 
 from app.utils import dict_regex
+
 
 class Animal(BaseModel):
     name: str
@@ -10,3 +10,4 @@ class Animal(BaseModel):
     gender: str = Field(pattern=dict_regex["gender pattern"])
     neutering: str = Field(pattern=dict_regex["neutering pattern"])
     weight: str
+    image: str

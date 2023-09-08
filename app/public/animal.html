@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -44,13 +44,11 @@
             </div>
 
             <div class="pets-photo">
-
-              <button id="pets-upload">
-                <i class="fas fa-camera-retro"></i>
+              <button id="pets-upload" type="">
+                <i class="fas fa-camera-retro"></i>    
               </button>
-              <label for="pets-upload">Upload a photo</label>
+              <input type="file" name="image" id="image" accept="image/*" size="10">
             </div>
-
           </div>
 
 
@@ -113,8 +111,9 @@
 
         <footer>
           <div class="set">
-            <button type="submit" id="next" value="Send">Create</button>
+            <button id="next" value="Send">Create</button>
           </div>
+
         </footer>
 
       </form>

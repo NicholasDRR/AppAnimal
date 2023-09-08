@@ -1,3 +1,4 @@
+import base64
 from fastapi import APIRouter, status, HTTPException
 from fastapi.responses import JSONResponse
 from bson.objectid import ObjectId
@@ -35,14 +36,18 @@ def show_animals():
         
     
 @router.post("/register")
-def create_animal(animal: Animal):
+async def create_animal(animal: Animal):
     
     client, collection = dao.connect_mongo()
+    
+    animal.image = base64.b64encode(animal.image.encode()).decode('utf-8')
+    
     
     try:
         collection.insert_one(dict(animal))
         
     except Exception as error:
+        
         client.close()
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail={"msg": str(error)})
     

@@ -1,5 +1,5 @@
 FROM mongo:latest
 
-EXPOSE 27017
+EXPOSE 27018
 
 CMD ["mongod"]

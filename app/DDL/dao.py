@@ -1,7 +1,8 @@
 import pymongo
-from dotenv import load_dotenv
 import os
-from fastapi import APIRouter, status, HTTPException
+
+from dotenv import load_dotenv
+from fastapi import status, HTTPException
 
 load_dotenv()
 
@@ -11,7 +12,6 @@ COLLECTION = os.getenv("COLLECTION")
 
 
 def connect_mongo():
-    
     
     try:
         client = pymongo.MongoClient(HOST)
