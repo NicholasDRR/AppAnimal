@@ -40,9 +40,6 @@ async def create_animal(animal: Animal):
     
     client, collection = dao.connect_mongo()
     
-    animal.image = base64.b64encode(animal.image.encode()).decode('utf-8')
-    
-    
     try:
         collection.insert_one(dict(animal))
         
@@ -74,11 +71,12 @@ def show_animal_by_id(id: str):
     
     else:
         client.close()
+        item["_id"] = str(item["_id"])
         
         if not item:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={"msg": "This animal does not exists"})
         
-        return JSONResponse(status_code=status.HTTP_200_OK, content=str(item))    
+        return JSONResponse(status_code=status.HTTP_200_OK, content=item)    
     
 
 @router.delete('/delete')
@@ -92,7 +90,7 @@ def delete_animal_by_id(id: str):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={"msg": "This animal does not exists!"})
     
     try:
-        collection.delete_one({'_id': ObjectId(id)})
+        collection.delete_many({})
 
     except Exception as error:
         client.close()
@@ -130,7 +128,3 @@ def update_animal_by_id(id: str, animal: Animal):
             return JSONResponse(status_code=status.HTTP_200_OK, content={"msg": "Animal modified!"})
         else:
             raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail={"msg": error})
-        
-        
-        
-             

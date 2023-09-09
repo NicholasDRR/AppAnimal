@@ -6,15 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="animal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="index.js" defer></script>
+  <script src="/app/public/index.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>AppAnimal</title>
 </head>
 
 <body>
 
-  <div class="signup-container">
+  <div class="menu">
+    <a href="/app/public/animal/animal.html" class="menu-item">Create Animal</a>
+    <a href="/app/public/list-animal/list-animal.html" class="menu-item">List animals</a>
+  </div>
 
+
+
+
+  <div class="signup-container">
 
     <div class="left-container">
       <h1>
@@ -47,7 +54,8 @@
               <button id="pets-upload" type="">
                 <i class="fas fa-camera-retro"></i>    
               </button>
-              <input type="file" name="image" id="image" accept="image/*" size="10">
+              <input type="file" name="image" id="image" accept="image/*">
+              <label for="image" class="butao"><span>Click here!</span></label>
             </div>
           </div>
 

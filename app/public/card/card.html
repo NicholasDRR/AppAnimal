@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card.css">
+    <script src="/app/public/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Card de Cachorro</title>
+    
+</head>
+<body>
+
+    <div class="menu">
+      <a href="/app/public/animal/animal.html" class="menu-item">Create Animal</a>
+      <a href="/app/public/list-animal/list-animal.html" class="menu-item">List animals</a>
+    </div>
+
+    <div class="dog-card">
+        <img src="" alt="animal image" id="image" class="dog-image">
+        <div class="dog-info">
+            
+            <p id="name"> </p>
+            <p id="birthday"> </p>
+            <p id="breed"></p>
+            <p id="gender"></p>
+            <p id="neutering"></p>
+            <p id="weight"></p>
+
+            <div class="dog-actions">
+                <button class="edit-btn">Editar</button>
+                <button class="delete-btn">Excluir</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -59,9 +59,6 @@ function createAnimal(){
 }
 
 
-function hexToBase64(str) {
-    return btoa(String.fromCharCode.apply(null, str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" ")));
-}
 
 
 async function loadAnimals(){
@@ -70,33 +67,60 @@ async function loadAnimals(){
     const animals = response.data
     const animals_list = document.getElementById('animals-list')
 
-    //let base64_string = animals[animals.length - 1].image
-//
-    //const decodedString = btoa(atob(base64_string));
-//
-//
-    //let base64="iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
-    //let buffer=Uint8Array.from(btoa(base64_string), c => c.charCodeAt(0));
-    //let blob=new Blob([buffer], { type: "image/png" });
-    //let url=URL.createObjectURL(blob);
-//
-    //document.getElementById('teste').src = url
-
-
-
     animals.forEach(animal => {
 
-        const item = document.createElement('li')
-
-        const row = `${animal.name}`
-
-        item.innerText = row
+        
+        const item = document.createElement('li');
+        const link = document.createElement('a');
     
-        animals_list.appendChild(item)
+        link.href = `/app/public/card/card.html?id=${animal._id}`;
+        link.innerText = animal.name;
+    
+        item.appendChild(link);
+        animals_list.appendChild(item);
     });
 }
 
-   
+
+
+
+
+
+async function setById(){
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const idParam = urlParams.get('id');
+
+    const response = await axios.get(`http://127.0.0.1:8000/animal/id?id=${idParam}`)
+    const animals = response.data
+
+    const animal_image_field = document.getElementById('image')
+    animal_image_field.src = 'data:image/jpeg;base64,' + animals.image;
+
+
+    const animal_name_field = document.getElementById('name')
+    animal_name_field.innerHTML = `<strong>Name:</strong> ${animals.name}`;
+
+    const animal_birthday_field = document.getElementById('birthday')
+    animal_birthday_field.innerHTML = `<strong>Age:</strong> ${animals.birthday}`;
+
+    const animal_breed_field = document.getElementById('breed')
+    animal_breed_field.innerHTML = `<strong>Breed:</strong> ${animals.breed}`;
+    
+    const animal_gender_field = document.getElementById('gender')
+    animal_gender_field.innerHTML = `<strong>Gender:</strong> ${animals.gender}`;
+
+    const animal_neutering_field = document.getElementById('neutering')
+    animal_neutering_field.innerHTML = `<strong>Neutering:</strong> ${animals.neutering}`;
+
+    const animal_weight_field = document.getElementById('weight')
+    animal_weight_field.innerHTML = `<strong>Weight:</strong> ${animals.weight}`;
+
+    console.log(typeof(animals))
+
+
+}
+
 async function searchAnimal(){
 
     const response = await axios.get('http://127.0.0.1:8000/animal')
@@ -113,8 +137,6 @@ async function searchAnimal(){
         animals_searched.innerHTML = '' 
 
         animals.forEach(animal => {
-
-            console.log(animal.name)
 
             event.preventDefault()
 
@@ -191,17 +213,19 @@ async function convertToBinary(){
         var reader = new FileReader();
         reader.readAsBinaryString(file)
         await new Promise(resolve => reader.onload = () => resolve());
-        image_data = reader.result.toString()
 
+        image_seila =  reader.result.toString()
+        image_data = btoa(image_seila)
 }
 
 
 function app(){
     loadAnimals()
-    createAnimal()
-    searchAnimal()
-    deleteAnimal()
-    updateAnimal()
+    //createAnimal()
+    //searchAnimal()
+    //deleteAnimal()
+    //updateAnimal()
+    setById()
 }
 
 
