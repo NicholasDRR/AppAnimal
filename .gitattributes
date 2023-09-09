@@ -1,1 +1,4 @@
 app/public/* linguist-vendored
+app/public/card/* linguist-vendored
+app/public/animal/* linguist-vendored
+app/public/list-animal/* linguist-vendored
