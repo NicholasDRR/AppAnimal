@@ -7,7 +7,7 @@
 
 body {
   align-items: center;
-  background: #D8AA96;
+  background: #92857f;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
@@ -22,8 +22,8 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #D8AA96;
-  border-bottom: 2px solid #D8AA96;;
+  background-color: #92857f;
+  border-bottom: 2px solid #92857f;
 }
 
 .menu-item {
@@ -38,6 +38,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
+  margin-left: 3px;
 }
 
 .menu-item:hover {

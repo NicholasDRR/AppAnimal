@@ -5,6 +5,15 @@ function toTitleCase(text) {
     return text.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
   }
 
+function redirectToUpdate() {
+
+    urlParams = new URLSearchParams(window.location.search);
+    idParam = urlParams.get('id');
+    const redirectButtom = document.getElementById('update')
+    redirectButtom.setAttribute('href', `/app/public/card/card-edit.html?id=${idParam}`)
+}
+
+
 async function setById(){
 
     urlParams = new URLSearchParams(window.location.search);
@@ -44,8 +53,8 @@ function deleteAnimal(){
     } catch (error) {
         console.error(error);
     }
-    alert("Animal deleted")
     window.location.href = "/app/public/list-animal/list-animal.html";
+    alert("Animal deleted")
 }
 
 setById()

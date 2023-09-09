@@ -1,10 +1,9 @@
-import base64
 from fastapi import APIRouter, status, HTTPException
 from fastapi.responses import JSONResponse
 from bson.objectid import ObjectId
 
-from app.DDL import dao
-from app.models.models_animal import Animal
+from app.models import dao
+from app.schemas.animal import Animal
 from app.utils import validate_id
 
 

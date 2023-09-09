@@ -4,13 +4,52 @@
   --container-height: 498px;
 }
 
+body {
+  align-items: center;
+  background: #92857f;
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  weight: 100vw;
+}
+
+
+#searchbutton{
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100px;
+  text-align: center;
+  margin: 0;
+}
+#searchname{
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100px;
+  text-align: center;
+  margin-left: 10px;
+}
+
 
 .menu {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #D8AA96;
-  border-bottom: 2px solid #D8AA96;;
+  background-color: #92857f;
+  border-bottom: 2px solid #92857f;
 }
 
 .menu-item {
@@ -25,24 +64,12 @@
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
+  margin-left: 3px;
 }
 
 .menu-item:hover {
   background-color: #ddd;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 section {
   position: relative;
@@ -101,6 +128,10 @@ li {
   text-align: center;
 }
 
+li a{
+  text-decoration: none;
+}
+
 li:hover{
   text-decoration: underline;
   color: #807182;
@@ -119,23 +150,9 @@ li:first-child {
   box-sizing: border-box;
 }
 
-body {
-  align-items: center;
-  background: #D8AA96;
-  color: rgba(0, 0, 0, 0.8);
-  display: grid;
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  height: 100vh;
-  justify-items: center;
-  weight: 100vw;
-}
-
 .animation {
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Isolation_Mode' data-name='Isolation Mode' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 633.33 680'%3E%3Cpath fill='%23807182' d='M383.33,500c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50c-27.61,0-50-22.39-50-50,0-25.99,19.83-47.35,45.18-49.77l4.82-.23H383.33Zm200-166.67c27.61,0,50,22.39,50,50s-22.39,50-50,50H50c-27.61,0-50-22.39-50-50s22.39-50,50-50H583.33Zm-200-166.67c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50c-27.61,0-50-22.39-50-50,0-25.99,19.83-47.35,45.18-49.77l4.82-.23H383.33ZM583.33,0c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50C22.39,100,0,77.61,0,50,0,24.01,19.83,2.65,45.18,.23l4.82-.23H583.33Z'/%3E%3C/svg%3E");
 }
-
 
 
 /* width */

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card-edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="/app/public/animal/animal.js" defer></script>
+    <script src="/app/public/card/card-edit.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>AppAnimal</title>
+    
+</head>
+<body>
+
+    <div class="menu">
+      <a href="/app/public/animal/animal.html" class="menu-item">Create</a>
+      <a href="/app/public/list-animal/list-animal.html" class="menu-item">List</a>
+    </div>
+
+    
+    <div class="right-container">
+
+        <form id="update-form">
+  
+          <header>
+  
+            <div class="set">
+  
+              <div class="pets-name">
+                <label for="pets-name">Name</label>
+                <input type="text" id="update-name" placeholder="Pet's name" required>
+              </div>
+  
+              <div class="pets-photo">
+                <button id="pets-upload" type="">
+                  <i class="fas fa-camera-retro"></i>    
+                </button>
+                <input type="file" name="image" id="image" accept="image/*" >
+                <label for="image" class="butao" onclick="anexImage()"><span id="clickhere">Click here!</span></label>
+              </div>
+            </div>
+  
+  
+            <div class="set">
+  
+              <div class="pets-breed">
+                <label for="pets-breed">Breed</label>
+                <input type="text" id="update-breed" placeholder="Pet's breed" required>
+              </div>
+  
+              <div class="pets-birthday">
+                <label for="pets-birthday">Birthday</label>
+                <input type="text" id="update-birthday" placeholder="DD/MM/YYYY" required>
+              </div>
+  
+            </div>
+  
+            <div class="set">
+  
+              <div class="pets-gender">
+                
+                <label for="pet-gender-female">Gender</label>
+                <div class="radio-container">
+                  <input type="radio" id="pet-gender-female" name="pet-gender-update" value="female" checked>
+                  <label for="pet-gender-female">Female</label>
+                  <input type="radio" id="pet-gender-male" name="pet-gender-update" value="male">
+                  <label for="pet-gender-male">Male</label>
+                </div>
+  
+              </div>
+  
+              <div class="pets-spayed-neutered">
+                <label for="pet-spayed">Spayed or Neutered</label>
+                <div class="radio-container">
+                  <input type="radio" id="pet-spayed" name="spayed-neutered-update" value="spayed" checked>
+                  <label for="pet-spayed">Spayed</label>
+                  <input type="radio" id="pet-neutered" name="spayed-neutered-update" value="neutered">
+                  <label for="pet-neutered">Neutered</label>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="pets-weight">
+              <label for="pet-weight-0-25">Weight</label>
+              <div class="radio-container">
+                <input type="radio" id="pet-weight-0-25" name="pet-weight-update" value="0-25 lbs" checked>
+                <label for="pet-weight-0-25">0-25 lbs</label>
+                <input type="radio" id="pet-weight-25-50" name="pet-weight-update" value="25-50 lbs">
+                <label for="pet-weight-25-50">25-50 lbs</label>
+                <input type="radio" id="pet-weight-50-100" name="pet-weight-update" value="50-100 lbs">
+                <label for="pet-weight-50-100">50-100 lbs</label>
+                <input type="radio" id="pet-weight-100-plus" name="pet-weight-update" value="100+ lbs">
+                <label for="pet-weight-100-plus">100+ lbs</label>
+              </div>
+            </div>
+  
+  
+          </header>
+  
+          <footer>
+            <div class="set">
+              <button onclick="updateAnimal()" id="next" value="Send">Edit</button>
+            </div>
+  
+          </footer>
+  
+        </form>
+  
+      </div>
+  
+    </div>
+
+
+
+</body>
+</html>

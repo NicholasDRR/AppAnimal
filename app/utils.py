@@ -10,7 +10,6 @@ dict_regex = {
     
 }
 
-
 def validate_id(id: int):
     
     if not re.match(dict_regex["object_id pattern"], id):

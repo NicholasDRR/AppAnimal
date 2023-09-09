@@ -26,7 +26,6 @@ function createAnimal(){
             await convertToBinary();
         }
 
-
         const animal_name = input_name.value
         const animal_breed = input_breed.value
         const animal_birthday = input_birthday.value
@@ -46,8 +45,6 @@ function createAnimal(){
                 var animal_weight = input_weight[i].value
             }}
 
-
-            
         if (image_data === "") {
             alert("Select an image before sending the form.");
             return false; 

@@ -7,7 +7,6 @@
     <script src="/app/public/card/card.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>AppAnimal</title>
-    
 </head>
 <body>
 
@@ -28,7 +27,7 @@
             <p id="weight"></p>
 
             <div class="dog-actions">
-                <button class="edit-btn">Editar</button>
+                <button onclick="redirectToUpdate()" class="edit-btn"><a id="update">Editar</a></button>
                 <button onclick="deleteAnimal()" class="delete-btn">Excluir</button>
             </div>
         </div>
