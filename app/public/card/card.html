@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="card.css">
-    <script src="/app/public/index.js" defer></script>
+    <script src="/app/public/card/card.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Card de Cachorro</title>
     
@@ -12,8 +12,8 @@
 <body>
 
     <div class="menu">
-      <a href="/app/public/animal/animal.html" class="menu-item">Create Animal</a>
-      <a href="/app/public/list-animal/list-animal.html" class="menu-item">List animals</a>
+      <a href="/app/public/animal/animal.html" class="menu-item">Create</a>
+      <a href="/app/public/list-animal/list-animal.html" class="menu-item">List</a>
     </div>
 
     <div class="dog-card">
@@ -29,7 +29,7 @@
 
             <div class="dog-actions">
                 <button class="edit-btn">Editar</button>
-                <button class="delete-btn">Excluir</button>
+                <button onclick="deleteAnimal()" class="delete-btn">Excluir</button>
             </div>
         </div>
     </div>

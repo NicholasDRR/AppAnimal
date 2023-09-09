@@ -16,8 +16,8 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #f5f5f5;
-  border-bottom: 2px solid #ddd;
+  background-color: #D8AA96;
+  border-bottom: 2px solid #D8AA96;;
 }
 
 .menu-item {
@@ -28,6 +28,10 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: background-color 0.3s;
+  width: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
 }
 
 .menu-item:hover {

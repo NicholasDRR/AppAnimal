@@ -90,7 +90,7 @@ def delete_animal_by_id(id: str):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail={"msg": "This animal does not exists!"})
     
     try:
-        collection.delete_many({})
+        collection.delete_one({'_id': ObjectId(id)})
 
     except Exception as error:
         client.close()
