@@ -29,7 +29,7 @@ async function setById(){
     animal_name_field.innerHTML = `<strong>Name:</strong> ${toTitleCase(animals.name)}`;
 
     const animal_birthday_field = document.getElementById('birthday')
-    animal_birthday_field.innerHTML = `<strong>Age:</strong> ${animals.birthday}`;
+    animal_birthday_field.innerHTML = `<strong>Birthday:</strong> ${animals.birthday}`;
 
     const animal_breed_field = document.getElementById('breed')
     animal_breed_field.innerHTML = `<strong>Breed:</strong> ${toTitleCase(animals.breed)}`;
