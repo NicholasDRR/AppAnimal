@@ -16,6 +16,10 @@ sudo docker run -d --name mongo_appanimal -v appanimal_db -p 27018:27017 mongo
 sudo docker start mongo_appanimal
 ```
 
+## Video
+Publicação: [**Linkedin**](https://www.linkedin.com/feed/update/urn:li:activity:7107108080730914816/).
+
+
 ## Credits
 
 This project uses the following third-party template/resource:
